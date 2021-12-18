@@ -3,12 +3,14 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // displayClock();
-    displayClock()
+    const content = document.getElementById("content");
+    
+    displayClock();
+    colorChange();
 })
 
 function displayClock() {
-    const content = document.getElementById("content");
+
     let clock = new Date;
     let h = clock.getHours();
     let m = clock.getMinutes();
@@ -21,16 +23,17 @@ function displayClock() {
     `;
     setTimeout(displayClock, 1000)
 }
-// function startTime() {
-//     // const today = new Date();
-//     // let h = today.getHours();
-//     // let m = today.getMinutes();
-//     // let s = today.getSeconds();
-//     // m = checkTime(m);
-//     // s = checkTime(s);
-//     document.getElementById('content').innerHTML =  h + ":" + m + ":" + s;
-//     setTimeout(startTime, 1000);
-//   }
+
+function colorChange() {
+    document.addEventListener("click", () => {
+        const title = document.getElementById("title")
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        console.log(randomColor)
+            title.style.color = `#${randomColor}`
+            
+    })
+}
+
 
 
 function checkTime(i) {
