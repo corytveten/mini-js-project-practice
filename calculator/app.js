@@ -29,3 +29,4 @@ function calculate(calculation) {
     console.log(parseInt(calculation))
     calculation.split()
 }
+
